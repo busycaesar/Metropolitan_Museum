@@ -1,0 +1,14 @@
+body {
+  background-color: #ffffe8 !important;
+  color: #000000 !important;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.mainContainer {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+h1 {
+  font-size: 2em;
+}
