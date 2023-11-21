@@ -34,9 +34,9 @@ export default function History() {
               className={styles.historyListItem}
             >
               {Object.keys(historyQueries).map((key) => (
-                <>
+                <span key={key}>
                   {key}: <strong>{historyQueries[key]}</strong>{" "}
-                </>
+                </span>
               ))}
               <Button
                 className="float-end"

@@ -18,6 +18,7 @@ export default function Login() {
       try {
         await authenticateUser(userName, password);
         await updateAtoms(setFavouriteList, setSearchHistory);
+        await setUserNameAtom(userName);
         router.push("/favourites");
       } catch (err) {
         setWarning(err.message);

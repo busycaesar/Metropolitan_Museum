@@ -33,11 +33,7 @@ export default function ArtworkCardDetail(props) {
     return (
       <Card style={{ width: "18rem" }}>
         {data?.primaryImage ? (
-          <Card.Img
-            style={{ marginBottom: "2em" }}
-            variant="top"
-            src={data.primaryImage}
-          />
+          <Card.Img variant="top" src={data.primaryImage} height={250} />
         ) : null}
         <Card.Body>
           <ul style={{ listStyleType: "none", padding: "0" }}>

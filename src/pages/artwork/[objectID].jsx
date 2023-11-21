@@ -7,8 +7,8 @@ export default function ObjectID() {
   const router = useRouter(),
     objectId = router.query;
   return (
-    <Row>
-      <Col>
+    <Row className="gy-4">
+      <Col lg={3}>
         <ArtworkCardDetail data={objectId} />
       </Col>
     </Row>
