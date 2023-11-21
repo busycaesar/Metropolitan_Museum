@@ -1,28 +1,19 @@
 import { useState } from "react";
 import { Card, Form, Button, Alert } from "react-bootstrap";
-import { authenticateUser } from "../../lib/authenticate";
+import { registerUser } from "../../lib/authenticate";
 import { useRouter } from "next/router";
-import { useAtom } from "jotai";
-import { FavouriteAtom, SearchHistoryAtom } from "../../store";
-import { getFavourites, getSearchHistory } from "../../lib/userData";
 
-export default function Login() {
+export default function Register() {
   const [userName, setUserName] = useState(""),
     [password, setPassword] = useState(""),
+    [password2, setPassword2] = useState(""),
     [warning, setWarning] = useState(""),
-    [favouriteList, setFavouriteList] = useAtom(FavouriteAtom),
-    [searchHistory, setSearchHistory] = useAtom(SearchHistoryAtom),
-    updateAtoms = async () => {
-      setFavouriteList(await getFavourites());
-      setSearchHistory(await getSearchHistory());
-    },
     router = useRouter(),
     handleSubmit = async (e) => {
       e.preventDefault();
       try {
-        await authenticateUser(userName, password);
-        await updateAtoms();
-        router.push("/favourites");
+        await registerUser(userName, password, password2);
+        router.push("/login");
       } catch (err) {
         setWarning(err.message);
       }
@@ -31,8 +22,8 @@ export default function Login() {
     <>
       <Card bg="light">
         <Card.Body>
-          <h2>Login</h2>
-          <span>Enter your login information below:</span>
+          <h2>Register</h2>
+          <span>Enter your information below:</span>
         </Card.Body>
       </Card>
       <br />
@@ -59,8 +50,19 @@ export default function Login() {
           />
         </Form.Group>
         <br />
+        <Form.Group>
+          <Form.Label>Confirm Password:</Form.Label>
+          <Form.Control
+            value={password2}
+            onChange={(e) => setPassword2(e.target.value)}
+            type="password"
+            id="password2"
+            name="password2"
+          />
+        </Form.Group>
+        <br />
         <Button variant="primary" className="pull-right" type="submit">
-          Login
+          Register
         </Button>
         <br />
         {warning && (
