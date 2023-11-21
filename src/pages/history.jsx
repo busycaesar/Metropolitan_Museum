@@ -4,10 +4,12 @@ import { useAtom } from "jotai";
 import { useRouter } from "next/router";
 import { Card, ListGroup, Button } from "react-bootstrap";
 import styles from "@/styles/history.module.css";
+import { removeFromSearchHistory } from "../../lib/userData";
 
 export default function History() {
   const [searchHistory, setSearchHistory] = useAtom(SearchHistoryAtom),
     router = useRouter();
+  if (!searchHistory) return null;
   let parsedHistory = [];
   searchHistory.forEach((history) => {
     let params = new URLSearchParams(history),
@@ -17,13 +19,9 @@ export default function History() {
   const historyClicked = (e, index) => {
       router.push(`/artwork?${searchHistory[index]}`);
     },
-    removeHistoryClicked = (e, index) => {
+    removeHistoryClicked = async (e, index) => {
       e.stopPropagation();
-      setSearchHistory((currentList) => {
-        let newList = [...currentList];
-        newList.splice(index, 1);
-        return newList;
-      });
+      setSearchHistory(await removeFromSearchHistory(searchHistory[index]));
     };
   return (
     <>

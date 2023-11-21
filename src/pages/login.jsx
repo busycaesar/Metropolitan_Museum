@@ -4,7 +4,7 @@ import { authenticateUser } from "../../lib/authenticate";
 import { useRouter } from "next/router";
 import { useAtom } from "jotai";
 import { FavouriteAtom, SearchHistoryAtom } from "../../store";
-import { getFavourites, getSearchHistory } from "../../lib/userData";
+import { updateAtoms } from "../../lib/utilFunctions";
 
 export default function Login() {
   const [userName, setUserName] = useState(""),
@@ -12,16 +12,12 @@ export default function Login() {
     [warning, setWarning] = useState(""),
     [favouriteList, setFavouriteList] = useAtom(FavouriteAtom),
     [searchHistory, setSearchHistory] = useAtom(SearchHistoryAtom),
-    updateAtoms = async () => {
-      setFavouriteList(await getFavourites());
-      setSearchHistory(await getSearchHistory());
-    },
     router = useRouter(),
     handleSubmit = async (e) => {
       e.preventDefault();
       try {
         await authenticateUser(userName, password);
-        await updateAtoms();
+        await updateAtoms(setFavouriteList, setSearchHistory);
         router.push("/favourites");
       } catch (err) {
         setWarning(err.message);

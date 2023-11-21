@@ -2,10 +2,11 @@ import "@/styles/bootstrap.min.css";
 import Layout from "@/components/Layout";
 import { SWRConfig } from "swr";
 import "@/styles/globals.css";
+import RouteGuard from "@/components/RouteGuard";
 
 export default function App({ Component, pageProps }) {
   return (
-    <>
+    <RouteGuard>
       <Layout>
         <SWRConfig
           value={{
@@ -26,6 +27,6 @@ export default function App({ Component, pageProps }) {
           <Component {...pageProps} />
         </SWRConfig>
       </Layout>
-    </>
+    </RouteGuard>
   );
 }
