@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, Form, Button, Alert } from "react-bootstrap";
 import { registerUser } from "../../lib/authenticate";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Register() {
   const [userName, setUserName] = useState(""),
@@ -61,6 +62,9 @@ export default function Register() {
           />
         </Form.Group>
         <br />
+        <p>
+          <Link href="/login">Already have an account?</Link>
+        </p>
         <Button variant="primary" className="pull-right" type="submit">
           Register
         </Button>

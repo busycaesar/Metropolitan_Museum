@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import { useAtom } from "jotai";
 import { FavouriteAtom, SearchHistoryAtom } from "../../store";
 import { getFavourites, getSearchHistory } from "../../lib/userData";
+import Link from "next/link";
 
 export default function Login() {
   const [userName, setUserName] = useState(""),
@@ -59,6 +60,9 @@ export default function Login() {
           />
         </Form.Group>
         <br />
+        <p>
+          <Link href="/register">Dont have an account?</Link>
+        </p>
         <Button variant="primary" className="pull-right" type="submit">
           Login
         </Button>
