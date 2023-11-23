@@ -34,7 +34,6 @@ export default function MainNav() {
       router.push("/login");
     };
   let token = readToken();
-  console.log(token);
   return (
     <Navbar bg="primary" variant="dark" expand="lg" expanded={isExpanded}>
       <Container>
