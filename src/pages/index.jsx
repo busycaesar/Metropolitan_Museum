@@ -1,14 +1,11 @@
 /*********************************************************************************
- *  WEB422 – Assignment 5
- *  I declare that this assignment is my own work in accordance with Seneca Academic Policy.
- *  No part of this assignment has been copied manually or electronically from any other source
- *  (including web sites) or distributed to other students.
+ *  WEB422 – Assignment 6
+ *  I declare that this assignment is my own work in accordance with Seneca  Academic Policy. No    part of this assignment has been copied manually or electronically from any other source (including web sites) or distributed to other students.
  *
- *  Name: DEV JIGISHKUMAR SHAH Student ID: 131623217 Date: 12/11/2023
+ *  Name: Dev Jigishkumar Shah Student ID: 131623217 Date: 23/11/2023
  *
- *  Deployment Link: https://web-422-metropolitan-museum-jotai.vercel.app/
- *
- *  GitHub Link: https://github.com/busycaesar/WEB_422_Metropolitan_Museum_Jotai
+ *  Vercel App (Deployed) Link: https://web-422-metropolitan-museum-jwt-authentication.vercel.app/
+ *  GitHub Link: https://github.com/busycaesar/WEB_422_Metropolitan_Museum_JWTAuthentication
  *
  ********************************************************************************/
 
