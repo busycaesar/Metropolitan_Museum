@@ -77,7 +77,7 @@ export default function MainNav() {
                 </Button>
               </Form>
               <Nav>
-                <NavDropdown title="Options" id="basic-nav-dropdown">
+                <NavDropdown title={token.userName} id="basic-nav-dropdown">
                   <Link legacyBehavior passHref href="/favourites">
                     <NavDropdown.Item
                       active={router.pathname === "/favourites"}
