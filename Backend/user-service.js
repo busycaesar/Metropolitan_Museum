@@ -1,7 +1,7 @@
 const mongoose = require("mongoose"),
   bcrypt = require("bcryptjs");
 
-let mongoDBConnectionString = process.env.MONGO_URL,
+let mongoDBConnectionString = process.env.MONGODB,
   Schema = mongoose.Schema,
   userSchema = new Schema({
     userName: {
@@ -30,6 +30,7 @@ module.exports.connect = () => {
 
 module.exports.registerUser = (userData) => {
   return new Promise((resolve, reject) => {
+    console.log("Attempt to register a new user!", userData);
     if (userData.password != userData.password2)
       reject("Passwords do not match");
     else {
@@ -37,7 +38,6 @@ module.exports.registerUser = (userData) => {
         .hash(userData.password, 10)
         .then((hash) => {
           userData.password = hash;
-
           let newUser = new User(userData);
 
           newUser
@@ -46,7 +46,7 @@ module.exports.registerUser = (userData) => {
               resolve("User " + userData.userName + " successfully registered")
             )
             .catch((err) => {
-              if (err.code == 11000) reject("Username is already taken");
+              if (err.code === 11000) reject("Username is already taken");
               else reject("There was an error creating the user: " + err);
             });
         })
