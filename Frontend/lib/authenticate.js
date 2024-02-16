@@ -24,16 +24,15 @@ export const isAuthenticated = () => (readToken() ? true : false);
 export const registerUser = async (userName, password, password2) => {
   try {
     const res = await requestUserDataResponse("POST", "register", false, {
-      userName: userName,
-      password: password,
-      password2: password2,
-    });
-    console.log(await res);
-    //data = await res.json();
-    // if (res.status === 200) return true;
-    // else throw new Error(data?.message);
+        userName: userName,
+        password: password,
+        password2: password2,
+      }),
+      data = await res.json();
+    if (res.status === 200) return true;
+    else throw new Error(data?.message);
   } catch (error) {
-    throw new Error(`This is the error ${error}.`);
+    throw new Error(`${error}.`);
   }
 };
 
