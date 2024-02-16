@@ -1,15 +1,3 @@
-/*********************************************************************************
- *  WEB422 – Assignment 6
- *  I declare that this assignment is my own work in accordance with Seneca  Academic Policy. No    part of this assignment has been copied manually or electronically from any other source (including web sites) or distributed to other students.
- *
- *  Name: Dev Jigishkumar Shah Student ID: 131623217 Date: 23/11/2023
- *
- *  Vercel App (Deployed) Link: https://web-422-metropolitan-museum-jwt-authentication.vercel.app/
- *  GitHub Link: https://github.com/busycaesar/WEB_422_Metropolitan_Museum_JWTAuthentication
- *
- ********************************************************************************/
-
-/* eslint-disable react/no-unescaped-entities */
 import { Image, Row, Col } from "react-bootstrap";
 import homeImage from "@/images/home.jpg";
 

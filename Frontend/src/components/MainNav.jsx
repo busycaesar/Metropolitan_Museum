@@ -37,7 +37,7 @@ export default function MainNav() {
   return (
     <Navbar bg="primary" variant="dark" expand="lg" expanded={isExpanded}>
       <Container>
-        <Navbar.Brand href="#">Dev Jigishkumar Shah</Navbar.Brand>
+        <Navbar.Brand href="#">Metropolitan Museum</Navbar.Brand>
         <Navbar.Toggle
           aria-controls="navbarbuttons"
           onClick={() => setIsExpanded(!isExpanded)}
