@@ -37,7 +37,7 @@ First, using the command 'cd Backend', move to the Backend folder of the project
 Then type the following command to start the server.
 
 ```bash
-npm start
+npm run dev
 ```
 
 This starts the backend server on port 8080, connects with MondoDB and displays all the logs for each logic which helps the developer in case of any error.
