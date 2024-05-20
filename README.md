@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a Full-stack webapp(a part of school project) of Metropolitan Museum. It displays all the artifacts displayed in the Museum.
+This full-stack web application for the Metropolitan Museum offers a comprehensive platform for exploring the museum's collection of artifacts. The application provides robust user authentication and authorization through JWT tokens, ensuring secure access and interactions. Advanced search functionality allows users to filter artifacts based on various criteria, making it easy to find specific items of interest. Additionally, the application stores user search history, allowing users to review and access previous search results, providing a seamless and personalized browsing experience. Finally, a favorites feature enables users to save and revisit their preferred artifacts, enhancing the overall user experience.
 
 ## Tech Stack
 
